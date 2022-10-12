@@ -1,0 +1,20 @@
+logging:
+  level:
+    root: INFO
+    com.czetsuyatech: DEBUG
+
+server:
+  port: 8081
+
+app:
+  security:
+    jwt:
+      keycloak:
+        realm: czetsuyatech
+
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/auth/realms/${app.security.jwt.keycloak.realm}
